@@ -1,0 +1,369 @@
+    /*=============== GOOGLE FONTS ===============*/
+    
+    @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;800&display=swap");
+    /*=============== VARIABLES CSS ===============*/
+    
+     :root {
+        --header-height: 3rem;
+        /*========== Colors ==========*/
+        --hue-color: 206;
+        --black-color: hsl(var(--hue-color), 4%, 4%);
+        --black-color-alt: hsl(var(--hue-color), 4%, 8%);
+        --title-color: hsl(var(--hue-color), 4%, 95%);
+        --text-color: hsl(var(--hue-color), 4%, 75%);
+        --text-color-light: hsl(var(--hue-color), 4%, 65%);
+        --white-color: #FFF;
+        --body-color: hsl(var(--hue-color), 4%, 6%);
+        --container-color: hsl(var(--hue-color), 4%, 10%);
+        /*========== Font and typography ==========*/
+        --body-font: 'Poppins', sans-serif;
+        --biggest-font-size: 5rem;
+        --bigger-font-size: 3.5rem;
+        --big-font-size: 2.5rem;
+        --h2-font-size: 1.25rem;
+        --h3-font-size: 1.125rem;
+        --normal-font-size: .938rem;
+        --small-font-size: .813rem;
+        --smaller-font-size: .75rem;
+        --text-line-height: 2rem;
+        /*========== Font weight ==========*/
+        --font-light: 100;
+        --font-medium: 500;
+        --font-semi-bold: 600;
+        --font-bold: 800;
+        /*========== Margenes Bottom ==========*/
+        --mb-0-5: .5rem;
+        --mb-0-75: .75rem;
+        --mb-1: 1rem;
+        --mb-1-5: 1.5rem;
+        --mb-2: 2rem;
+        --mb-2-5: 2.5rem;
+        /*========== z index ==========*/
+        --z-tooltip: 10;
+        --z-fixed: 100;
+    }
+    /*=============== BASE ===============*/
+    
+    *,
+    *::before,
+    *::after {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+    
+    html {
+        scroll-behavior: smooth;
+    }
+    
+    body {
+        font-family: var(--body-font);
+    }
+    
+     ::selection {
+        background-color: #0b372dbb;
+    }
+    /*=============== NAV ===============*/
+    
+    .logo {
+        width: 6.25rem;
+    }
+    
+    .header {
+        position: absolute;
+        z-index: 9999;
+        width: 100%;
+        padding: 0.9rem 0;
+        top: 0;
+        left: 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    header nav {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .nav_list {
+        display: flex;
+        list-style: none;
+        align-items: center;
+    }
+    
+    .nav_list a {
+        text-decoration: none;
+        color: var(--white-color);
+        padding: 0 1.5rem;
+        text-transform: uppercase;
+        font-weight: var(--font-semi-bold);
+        font-size: 0.83rem;
+    }
+    
+    .nav_search a {
+        font-size: 1.05rem;
+        padding: 0 3rem;
+    }
+    
+    .nav_hamburger {
+        padding-left: 1.5rem;
+    }
+    
+    .nav_hamburger a {
+        padding: 0;
+        width: 2.188rem;
+        height: 2.188rem;
+        display: flex;
+        border-radius: 50%;
+        background-color: rgba(115, 115, 115, 0.7);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .nav_hamburger .bar {
+        position: relative;
+        width: 52%;
+        height: 0.081rem;
+        background-color: var(--white-color);
+        border-radius: 0.125rem;
+    }
+    
+    .nav_hamburger .bar::before,
+    .nav_hamburger .bar::after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 60%;
+        height: 100%;
+        background-color: inherit;
+        border-radius: 0.125rem;
+    }
+    
+    .nav_hamburger .bar::before {
+        top: -0.281rem;
+    }
+    
+    .nav_hamburger .bar::after {
+        top: 0.281rem;
+    }
+    /*=============== HOME ===============*/
+    
+    main {
+        position: relative;
+        background-color: #353;
+        height: 100vh;
+        width: 100vw;
+        overflow: hidden;
+    }
+    
+    .parallax {
+        pointer-events: none;
+        transition: 0.45s cubic-bezier(.2, .49, .32, .99);
+    }
+    
+    .select {
+        user-select: none;
+    }
+
+    .bg-img {
+        position: absolute;
+        width: 2800px;
+        top: calc(50% - 470px);
+        left: calc(50% + 10px);
+        z-index: 1;
+        pointer-events: none;
+    }
+    
+    .fog-7 {
+        position: absolute;
+        z-index: 2;
+        width: 1900px;
+        top: calc(50% - 100px);
+        left: calc(50% + 300px);
+    }
+    
+    .mountain-10 {
+        position: absolute;
+        z-index: 3;
+        width: 892px;
+        top: calc(50% + 69px);
+        left: calc(50% + 230px);
+    }
+    
+    .fog-6 {
+        position: absolute;
+        width: 2633px;
+        top: calc(50% + 95px);
+        left: calc(50% + 7px);
+        z-index: 4;
+    }
+    
+    .mountain-9 {
+        position: absolute;
+        z-index: 5;
+        width: 700px;
+        top: calc(50% + 245px);
+        left: calc(50% - 500px);
+    }
+    
+    .mountain-8 {
+        position: absolute;
+        z-index: 6;
+        width: 1000px;
+        top: calc(50% + 115px);
+        left: calc(50% - 220px);
+    }
+    
+    .fog-5 {
+        position: absolute;
+        z-index: 7;
+        width: 450px;
+        top: calc(50% + 160px);
+        left: calc(50% + 20px);
+    }
+    
+    .mountain-7 {
+        position: absolute;
+        z-index: 8;
+        width: 538px;
+        top: calc(50% + 123px);
+        left: calc(50% + 305px);
+    }
+    
+    .text {
+        position: absolute;
+        z-index: 9;
+        top: calc(50% - 130px);
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        pointer-events: auto;
+        text-transform: uppercase;
+        color: #FFF;
+    }
+    
+    .text h2 {
+        font-weight: var(--font-light);
+        font-size: 6.5rem;
+        line-height: 0.88;
+    }
+    
+    .text h1 {
+        font-weight: var(--font-bold);
+        font-size: 8rem;
+        line-height: 0.88;
+    }
+    
+    .mountain-6 {
+        position: absolute;
+        z-index: 10;
+        width: 500px;
+        top: calc(50% + 60px);
+        left: calc(50% + 640px);
+    }
+    
+    .fog-4 {
+        position: absolute;
+        z-index: 11;
+        width: 743px;
+        top: calc(50% + 244px);
+        left: calc(50% - 60px);
+    }
+    
+    .mountain-5 {
+        position: absolute;
+        z-index: 12;
+        width: 630px;
+        top: calc(50% + 280px);
+        left: calc(50% + 130px);
+    }
+    
+    .fog-3 {
+        position: absolute;
+        z-index: 13;
+        width: 1600px;
+        top: calc(50% + 110px);
+        left: calc(50% - 15px);
+    }
+    
+    .mountain-4 {
+        position: absolute;
+        z-index: 14;
+        width: 1000px;
+        top: calc(50% + 280px);
+        left: calc(50% - 400px);
+    }
+    
+    .mountain-3 {
+        position: absolute;
+        z-index: 15;
+        width: 400px;
+        top: calc(50% + 123px);
+        left: calc(50% + 900px);
+    }
+    
+    .fog-2 {
+        position: absolute;
+        z-index: 16;
+        width: 1418px;
+        top: calc(50% + 177px);
+        left: calc(50% - 30px);
+    }
+    
+    .mountain-2 {
+        position: absolute;
+        z-index: 17;
+        width: 740px;
+        top: calc(50% + 167px);
+        left: calc(50% + 415px);
+    }
+    
+    .mountain-1 {
+        position: absolute;
+        z-index: 18;
+        width: 530px;
+        top: calc(50% + 55px);
+        left: calc(50% - 786px);
+    }
+    
+    .sun-rays {
+        position: absolute;
+        z-index: 19;
+        top: 0;
+        right: 0;
+        width: 595px;
+        pointer-events: none;
+    }
+    
+    .black-shadow {
+        position: absolute;
+        z-index: 20;
+        bottom: 0;
+        right: 0;
+        width: 100%;
+    }
+    
+    .fog-1 {
+        position: absolute;
+        z-index: 21;
+        width: 1600px;
+        top: calc(100% - 355px);
+        left: calc(50% + 250px);
+    }
+    
+    .vignette {
+        position: absolute;
+        z-index: 100;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0) 65%, rgba(0, 0, 0, 0.7));
+        pointer-events: none;
+    }
